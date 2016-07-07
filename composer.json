@@ -1,0 +1,27 @@
+{
+    "name": "devgroup/yii2-measure",
+    "description": "This extension allows to work with different measure units, converts and formats it",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","measures","units","measure"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Pavel Fedotov",
+            "email": "fps.06@mail.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "~2.0.0",
+        "codeception/codeception": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "DevGroup\\Measure\\": "src/"
+        }
+    }
+}
