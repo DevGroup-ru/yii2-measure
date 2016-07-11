@@ -14,4 +14,13 @@ class MeasureTest extends UnitTestCase
         $this->assertSame(1, count($measure->errors));
         $this->assertTrue(isset($measure->errors['type']));
     }
+
+    public function testUnitUnique()
+    {
+        $measure = Measure::find()->one();
+        $measure->isNewRecord = true;
+        $this->assertFalse($measure->validate());
+        $this->assertSame(1, count($measure->errors));
+        $this->assertTrue(isset($measure->errors['unit']));
+    }
 }

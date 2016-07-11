@@ -57,6 +57,7 @@ class Measure extends \yii\db\ActiveRecord
             [['rate'], 'number'],
             [['use_custom_formatter', 'min_fraction_digits', 'max_fraction_digits'], 'integer'],
             [['name', 'unit', 'format', 'decimal_separator', 'thousand_separator'], 'string', 'max' => 255],
+            ['unit', 'unique', 'targetAttribute' => ['unit']],
         ];
     }
 
