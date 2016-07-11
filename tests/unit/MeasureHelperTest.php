@@ -35,14 +35,14 @@ class MeasureHelperTest extends UnitTestCase
     {
         // without converting
         $to = Measure::findOne(['unit' => 'kg']);
-        $this->assertSame('2,500.5 kg', MeasureHelper::format(2500.5, $to));
+        $this->assertSame('2,500.5 кг', MeasureHelper::format(2500.5, $to));
         // with converting
         $from = Measure::findOne(['unit' => 'g']);
-        $this->assertSame('2.5 kg', MeasureHelper::format(2500, $to, $from));
+        $this->assertSame('2.5 кг', MeasureHelper::format(2500, $to, $from));
         // custom formatter
         $to->use_custom_formatter = true;
         $to->decimal_separator = ',';
-        $this->assertSame('2 500,5 kg', MeasureHelper::format(2500.5, $to));
+        $this->assertSame('2 500,5 кг', MeasureHelper::format(2500.5, $to));
     }
 
     /**

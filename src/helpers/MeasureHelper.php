@@ -48,7 +48,7 @@ class MeasureHelper
             $to->format,
             [
                 '#' => $formatter->asDecimal($value),
-                '$' => $to->unit
+                '$' => static::t($to->unit),
             ]
         );
     }
