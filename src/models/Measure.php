@@ -5,7 +5,9 @@ namespace DevGroup\Measure\models;
 use DevGroup\Measure\helpers\MeasureHelper;
 use Yii;
 use yii\base\InvalidConfigException;
+use yii\db\ActiveQuery;
 use yii\i18n\Formatter;
+use yiister\mappable\ActiveRecordTrait;
 
 /**
  * This is the model class for table "{{%measure}}".
@@ -24,6 +26,8 @@ use yii\i18n\Formatter;
  */
 class Measure extends \yii\db\ActiveRecord
 {
+    use ActiveRecordTrait;
+
     /**
      * @var Formatter $formatterInstance the instance of custom formatter
      */
@@ -106,5 +110,30 @@ class Measure extends \yii\db\ActiveRecord
             );
         }
         return $this->formatterInstance;
+    }
+
+    /**
+     * Get a measure model by unit name.
+     * @param string $unit
+     * @return null|\yii\db\ActiveRecord
+     */
+    public static function getByUnit($unit)
+    {
+        return static::getByAttribute('unit', $unit);
+    }
+
+    /**
+     * Get measures by type name.
+     * @param string $type
+     * @return array of measures in the next format `measure_id => 'Measure name'`
+     */
+    public static function getMeasures($type)
+    {
+        /** @var ActiveQuery $query */
+        $query = static::find()->select(['name', 'id'])->indexBy('id');
+        if (empty($type) === false) {
+            $query->where(['type' => $type]);
+        }
+        return $query->column();
     }
 }

@@ -10,12 +10,12 @@ class MeasureHelperTest extends UnitTestCase
     public function testConvert()
     {
         // Length
-        $from = Measure::findOne(['unit' => 'mi']);
-        $to = Measure::findOne(['unit' => 'km']);
+        $from = Measure::getByUnit('mi');
+        $to = Measure::getByUnit('km');
         $this->assertEquals(2*1609.344/1000, MeasureHelper::convert(2, $to, $from));
         // Weight
-        $from = Measure::findOne(['unit' => 'lb']);
-        $to = Measure::findOne(['unit' => 'kg']);
+        $from = Measure::getByUnit('lb');
+        $to = Measure::getByUnit('kg');
         $this->assertEquals(300*0.45359237, MeasureHelper::convert(300, $to, $from));
         // Same measure
         $this->assertEquals(300, MeasureHelper::convert(300, $to, $to));
@@ -34,7 +34,7 @@ class MeasureHelperTest extends UnitTestCase
     public function testFormat()
     {
         // without converting
-        $to = Measure::findOne(['unit' => 'kg']);
+        $to = Measure::getByUnit('kg');
         $this->assertSame('2,500.5 кг', MeasureHelper::format(2500.5, $to));
         // with converting
         $from = Measure::findOne(['unit' => 'g']);

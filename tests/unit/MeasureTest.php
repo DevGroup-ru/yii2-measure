@@ -23,4 +23,21 @@ class MeasureTest extends UnitTestCase
         $this->assertSame(1, count($measure->errors));
         $this->assertTrue(isset($measure->errors['unit']));
     }
+
+    public function testFindByUnit()
+    {
+        $model1 = Measure::findOne(['unit' => 'kg']);
+        $model2 = Measure::getByUnit('kg');
+        $this->assertEquals($model1, $model2);
+    }
+
+    public function testGetMeasures()
+    {
+        $this->assertSame((int) Measure::find()->where(['type' => 'Length'])->count(), count(Measure::getMeasures('Length')));
+        $list = Measure::getMeasures(null);
+        $this->assertSame((int) Measure::find()->count(), count($list));
+        $item = Measure::getByUnit('kg');
+        $this->assertTrue(isset($list[$item->id]));
+        $this->assertSame($item->name, $list[$item->id]);
+    }
 }

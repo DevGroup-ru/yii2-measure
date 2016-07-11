@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "70db24b327ee800294492c2dc7ba732b",
-    "content-hash": "9d049cde3a237b9104bb45eea3ab679d",
+    "hash": "4c7f8fc34bdc6b8a160fc33189da8f4d",
+    "content-hash": "efc194a71c55a7b11f18e6abfd4906be",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -390,6 +390,59 @@
                 "yii2"
             ],
             "time": "2016-06-05 20:34:32"
+        },
+        {
+            "name": "yiister/yii2-mappable-ar",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiister/yii2-mappable-ar.git",
+                "reference": "3230832850b938da9876d6fc9437932aa3f8a949"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiister/yii2-mappable-ar/zipball/3230832850b938da9876d6fc9437932aa3f8a949",
+                "reference": "3230832850b938da9876d6fc9437932aa3f8a949",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "yiisoft/yii2": ">=2.0.5"
+            },
+            "require-dev": {
+                "yiisoft/yii2-codeception": "^2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yiister\\mappable\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Fedotov",
+                    "email": "fps.06@mail.ru",
+                    "homepage": "https://github.com/fps01",
+                    "role": "Creator"
+                }
+            ],
+            "description": "It is an extension for Yii framework 2 that gives an ability to use identity map for any ActiveRecord model.",
+            "homepage": "https://github.com/yiister/yii2-mappable-ar",
+            "keywords": [
+                "active-record",
+                "ar",
+                "backend",
+                "extension",
+                "identity-map",
+                "mappable",
+                "utils",
+                "yii2"
+            ],
+            "time": "2016-03-20 12:15:32"
         }
     ],
     "packages-dev": [
@@ -2365,7 +2418,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.0"
+        "php": ">=5.4.0"
     },
     "platform-dev": []
 }
