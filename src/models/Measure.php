@@ -29,10 +29,14 @@ class Measure extends \yii\db\ActiveRecord
      */
     protected $formatterInstance;
 
-    public function getTypes()
+    /**
+     * Get list of measure types.
+     * @return array of types in the next format `'TypeName' => 'Translated type name'`
+     */
+    public static function getTypes()
     {
         $typesList = [];
-        foreach ($this->tableSchema->columns['type']->enumValues as $type) {
+        foreach (Yii::$app->db->getTableSchema(static::tableName())->columns['type']->enumValues as $type) {
             $typesList[$type] = MeasureHelper::t($type);
         }
         return $typesList;
