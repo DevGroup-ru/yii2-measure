@@ -7,7 +7,9 @@ return [
     'runtimePath' => \Yii::getAlias('@tests/_output'),
     'sourceLanguage' => 'en-US',
     'language' => 'ru',
-    'bootstrap' => [],
+    'bootstrap' => [
+        'DevGroup\Measure\Bootstrap',
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
