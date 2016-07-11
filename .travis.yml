@@ -22,7 +22,7 @@ install:
   - vendor/codeception/codeception/codecept build
 
 before_script:
-  - mysql -e 'create database yii2_entity;'
+  - mysql -e 'create database yii2_measure;'
   - |
     if [ $TRAVIS_PHP_VERSION = '5.6' ]; then
       CODECEPT_FLAGS=" --coverage --coverage-xml"
