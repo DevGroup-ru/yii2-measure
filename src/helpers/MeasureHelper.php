@@ -87,13 +87,6 @@ class MeasureHelper
      */
     public static function t($message, $params = [], $language = null)
     {
-        if (isset(Yii::$app->i18n->translations['measure']) === false) {
-            Yii::$app->i18n->translations['measure'] = [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'en-US',
-                'basePath' => '@DevGroup/Measure/messages',
-            ];
-        }
         return Yii::t('measure', $message, $params, $language);
     }
 }
