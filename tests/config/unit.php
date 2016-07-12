@@ -18,7 +18,7 @@ return [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=yii2_measure',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
         ],
         'formatter' => [
             'thousandSeparator' => ',',
