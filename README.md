@@ -1,5 +1,9 @@
 Measures extension for Yii2
 ===========================
+
+[![Build Status](https://travis-ci.org/DevGroup-ru/yii2-measure.svg?branch=master)](https://travis-ci.org/DevGroup-ru/yii2-measure)
+[![codecov](https://codecov.io/gh/DevGroup-ru/yii2-measure/branch/master/graph/badge.svg)](https://codecov.io/gh/DevGroup-ru/yii2-measure)
+
 This extension allows to work with different measure units, converts and formats it
 
 Installation
