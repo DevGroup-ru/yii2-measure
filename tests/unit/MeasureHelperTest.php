@@ -58,4 +58,16 @@ class MeasureHelperTest extends UnitTestCase
     {
         $this->assertSame('Длина', MeasureHelper::t('Length'));
     }
+
+    public function testParseString()
+    {
+        $matchRules = [
+            '#^(?P<integral>[\d]+)(?:\.(?P<fractional>[\d]+))?$#',
+            '#^(?P<integral>[\d]+)(?:\,(?P<fractional>[\d]+))?$#',
+        ];
+        $this->assertSame(1000.5, MeasureHelper::parseString('1000.50', $matchRules));
+        $this->assertSame(1000.5, MeasureHelper::parseString('1000,50', $matchRules));
+        $this->assertSame(1000.5, MeasureHelper::parseString('1,000.5', function($s) {return (double) str_replace(',', '', $s);}));
+        $this->assertSame(false, MeasureHelper::parseString('1k', $matchRules));
+    }
 }

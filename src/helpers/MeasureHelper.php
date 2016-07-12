@@ -54,11 +54,27 @@ class MeasureHelper
     }
 
     /**
-     * @codeCoverageIgnore
+     * Parse string by regexp or closure.
+     * @param string $source
+     * @param \Closure[]|string[]|\Closure|string $matchRules
+     * @return false|float
      */
-    public static function parseByRegexp()
+    public static function parseString($source, $matchRules)
     {
-        // @todo Implement this method
+        foreach ((array) $matchRules as $matchRule) {
+            if ($matchRule instanceof \Closure) {
+                return $matchRule($source);
+            } else {
+                if (preg_match($matchRule, $source, $matches) === 1) {
+                    $value = $matches['integral'];
+                    if (isset($matches['fractional'])) {
+                        $value .= '.' . $matches['fractional'];
+                    }
+                    return (double) $value;
+                }
+            }
+        }
+        return false;
     }
 
     /**
