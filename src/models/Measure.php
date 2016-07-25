@@ -5,6 +5,7 @@ namespace DevGroup\Measure\models;
 use DevGroup\Measure\helpers\MeasureHelper;
 use Yii;
 use yii\base\InvalidConfigException;
+use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
 use yii\i18n\Formatter;
 use yiister\mappable\ActiveRecordTrait;
@@ -135,5 +136,24 @@ class Measure extends \yii\db\ActiveRecord
             $query->where(['type' => $type]);
         }
         return $query->column();
+    }
+
+    public function search($params)
+    {
+        $this->load($params);
+        $query = static::find();
+        $partialAttributes = ['name', 'unit', 'format'];
+        foreach ($this->attributes as $key => $value) {
+            if (in_array($key, $partialAttributes)) {
+                $query->andFilterWhere(['like', $key, $value]);
+            } else {
+                $query->andFilterWhere([$key => $value]);
+            }
+        }
+        return new ActiveDataProvider(
+            [
+                'query' => $query,
+            ]
+        );
     }
 }

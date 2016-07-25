@@ -8,11 +8,13 @@ settings:
     bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
+config:
+    test_entry_url: http://localhost:8080/index-test.php
 modules:
-    config:
-        Db:
-            dsn: ''
-            user: ''
+    enabled:
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=yii2_measure_app'
+            user: 'root'
             password: ''
             dump: tests/_data/dump.sql
 coverage:

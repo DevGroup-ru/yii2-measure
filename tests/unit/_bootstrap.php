@@ -1,2 +1,5 @@
 <?php
-// Here you can initialize variables that will be available to your tests
+
+$config = require(dirname(__DIR__) . '/config/unit.php');
+unset($config['class']);
+new yii\console\Application($config);

@@ -7,7 +7,9 @@ class m160707_123420_init extends Migration
 {
     public function up()
     {
-        $tableOptions = '';
+        $tableOptions = $this->db->driverName === 'mysql'
+            ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB'
+            : null;
         $this->createTable(
             Measure::tableName(),
             [
@@ -25,7 +27,17 @@ class m160707_123420_init extends Migration
             ],
             $tableOptions
         );
-        // @todo add indexes
+        $this->createIndex(
+            'ix-measure-type',
+            Measure::tableName(),
+            'type'
+        );
+        $this->createIndex(
+            'ix-measure-unit',
+            Measure::tableName(),
+            'unit',
+            true
+        );
         $this->batchInsert(
             Measure::tableName(),
             ['name', 'type', 'unit', 'rate', 'format'],

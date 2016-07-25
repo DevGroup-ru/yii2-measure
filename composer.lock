@@ -256,12 +256,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "607f0dda7bb2aae59b4799deb3e1a16d2033d6ce"
+                "reference": "c8ca8d3098a09aa61d15f46e6aaf2c9688297d7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/607f0dda7bb2aae59b4799deb3e1a16d2033d6ce",
-                "reference": "607f0dda7bb2aae59b4799deb3e1a16d2033d6ce",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c8ca8d3098a09aa61d15f46e6aaf2c9688297d7b",
+                "reference": "c8ca8d3098a09aa61d15f46e6aaf2c9688297d7b",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-07-06 22:30:06"
+            "time": "2016-07-13 08:16:02"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -511,12 +511,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "20ab679e68d83681b42100dc7508aac78c8f5d89"
+                "reference": "dcb5ad885f1ac964008b2e30347af4b02e21bd40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/20ab679e68d83681b42100dc7508aac78c8f5d89",
-                "reference": "20ab679e68d83681b42100dc7508aac78c8f5d89",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/dcb5ad885f1ac964008b2e30347af4b02e21bd40",
+                "reference": "dcb5ad885f1ac964008b2e30347af4b02e21bd40",
                 "shasum": ""
             },
             "require": {
@@ -594,7 +594,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2016-07-07 07:53:29"
+            "time": "2016-07-11 07:34:58"
         },
         {
             "name": "doctrine/instantiator",
@@ -813,12 +813,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "7ddcd25eeaf9f51173c5b477c75b1230a1e02eaa"
+                "reference": "bf357011d0693d610171c73ce3e4b494ab6e29cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/7ddcd25eeaf9f51173c5b477c75b1230a1e02eaa",
-                "reference": "7ddcd25eeaf9f51173c5b477c75b1230a1e02eaa",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/bf357011d0693d610171c73ce3e4b494ab6e29cc",
+                "reference": "bf357011d0693d610171c73ce3e4b494ab6e29cc",
                 "shasum": ""
             },
             "require": {
@@ -854,16 +854,23 @@
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
-            "description": "PSR-7 message implementation",
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
                 "http",
                 "message",
+                "request",
+                "response",
                 "stream",
-                "uri"
+                "uri",
+                "url"
             ],
-            "time": "2016-07-01 19:26:18"
+            "time": "2016-07-08 22:34:56"
         },
         {
             "name": "phpdocumentor/reflection-common",

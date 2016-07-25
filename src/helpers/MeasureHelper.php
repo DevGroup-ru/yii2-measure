@@ -19,7 +19,10 @@ class MeasureHelper
     public static function convert($value, $to, $from)
     {
         if ($from instanceof Measure === false || $to instanceof Measure === false) {
-            throw new Exception('One or more measures is null');
+            throw new Exception('`from` or `to` parameter is not a Measure');
+        }
+        if ($from->type !== $to->type) {
+            throw new Exception('Measures have different types');
         }
         if ($from->id == $to->id) {
             return $value;
@@ -29,7 +32,7 @@ class MeasureHelper
 
     /**
      * Format a value by rule as a string
-     * @param Measure $value
+     * @param double $value
      * @param Measure $to
      * @param Measure|null $from
      * @return string

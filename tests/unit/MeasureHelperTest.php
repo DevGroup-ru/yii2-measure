@@ -24,11 +24,22 @@ class MeasureHelperTest extends UnitTestCase
 
     /**
      * @expectedException \yii\base\Exception
-     * @expectedExceptionMessage One or more measures is null
+     * @expectedExceptionMessage `from` or `to` parameter is not a Measure
      */
     public function testConvertException()
     {
-        MeasureHelper::convert(123, null, null);
+        MeasureHelper::convert(123, \Yii::$app, new Measure);
+    }
+
+    /**
+     * @expectedException \yii\base\Exception
+     * @expectedExceptionMessage Measures have different types
+     */
+    public function testConvertException2()
+    {
+        $from = Measure::getByUnit('m');
+        $to = Measure::getByUnit('kg');
+        MeasureHelper::convert(123, $from, $to);
     }
 
     public function testFormat()
