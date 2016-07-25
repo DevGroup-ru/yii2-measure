@@ -65,8 +65,8 @@ class MeasureHelper
     public static function parseString($source, $matchRules)
     {
         foreach ((array) $matchRules as $matchRule) {
-            if ($matchRule instanceof \Closure) {
-                return $matchRule($source);
+            if (is_callable($matchRule) === true) {
+                return call_user_func($matchRule, $source);
             } else {
                 if (preg_match($matchRule, $source, $matches) === 1) {
                     $value = $matches['integral'];
