@@ -45,6 +45,7 @@ $config = [
     'modules' => [
         'measure' => [
             'class' => 'DevGroup\Measure\Module',
+            'manageControllerBehaviors' => [],
         ],
     ],
     'params' => $params,

@@ -30,7 +30,7 @@ before_script:
     fi
 
 script:
-  - vendor/codeception/codeception/codecept run unit --verbose $CODECEPT_FLAGS
+  - vendor/codeception/codeception/codecept run --verbose $CODECEPT_FLAGS
 
 after_script:
   - |
