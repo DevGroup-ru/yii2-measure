@@ -1,6 +1,7 @@
 <?php
 /* @var $scenario Codeception\Scenario */
-error_reporting(0);
+//error_reporting(0);
+ini_set('error_reporting', 0);
 $I = new FunctionalTester($scenario);
 $I->wantTo('ensure that update page works');
 $I->amOnPage('/measure/manage/update');
