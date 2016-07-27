@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
                 ],
             ],
         ],
-        'verbs' =>[
+        'verbs' => [
             'class' => 'yii\filters\VerbFilter',
             'actions' => [
                 'delete' => ['POST'],

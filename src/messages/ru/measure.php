@@ -12,6 +12,7 @@ return [
     'Thousand separator' => 'Разделитель тысяч',
     'Min fraction digits' => 'Минимальное количество знаков после запятой',
     'Max fraction digits' => 'Максимальное количество знаков после запятой',
+    'Converter class name' => 'Имя класса конвертера',
     'Length' => 'Длина',
     'Acceleration' => 'Ускорение',
     'Angle' => 'Угол',

@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'unit')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'rate')->textInput() ?>
             <?= $form->field($model, 'format')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'converter_class_name')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-xs-12 col-md-6">
             <?= $form->field($model, 'use_custom_formatter')->checkbox() ?>

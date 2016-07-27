@@ -9,6 +9,17 @@ use yii\base\Exception;
 class MeasureHelper
 {
     /**
+     * @var array of converters in the next format:
+     *  [
+     *      // The key is a string value from Measure->type attribute
+     *      // The value is a string with full converter class name.
+     *      // This class must implements the `MeasureTypeConverterInterface`
+     *      'Weight' => 'DevGroup\Measure\converters\DefaultMeasureTypeConverter',
+     *  ]
+     */
+    public static $converters = [];
+
+    /**
      * Convert a value from one measure to another
      * @param float $value
      * @param Measure $from
@@ -27,7 +38,10 @@ class MeasureHelper
         if ($from->id == $to->id) {
             return $value;
         }
-        return $value * $from->rate / $to->rate;
+        $converterClass = isset(static::$converters[$to->type]) === true
+            ? static::$converters[$to->type]
+            : 'DevGroup\Measure\converters\DefaultMeasureTypeConverter';
+        return $converterClass::convert($value, $to, $from);
     }
 
     /**

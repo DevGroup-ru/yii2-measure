@@ -40,4 +40,17 @@ class MeasureTest extends UnitTestCase
         $this->assertTrue(isset($list[$item->id]));
         $this->assertSame($item->name, $list[$item->id]);
     }
+
+    public function testConverterClass()
+    {
+        $measure = new Measure;
+        $measure->converter_class_name = '';
+        $this->assertTrue($measure->validate(['converter_class_name']));
+        $measure->converter_class_name = 'bla\bla\bla';
+        $this->assertFalse($measure->validate(['converter_class_name']));
+        $measure->converter_class_name = 'yii\db\ActiveRecord';
+        $this->assertFalse($measure->validate(['converter_class_name']));
+        $measure->converter_class_name = 'DevGroup\Measure\converters\temperature\CelsiusConverter';
+        $this->assertTrue($measure->validate(['converter_class_name']));
+    }
 }
