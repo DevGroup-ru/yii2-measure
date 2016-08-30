@@ -13,8 +13,18 @@ class Module extends \yii\base\Module
             'class' => 'yii\filters\AccessControl',
             'rules' => [
                 [
+                    'actions' => ['index', 'update'],
                     'allow' => true,
-                    'roles' => ['@'],
+                    'roles' => ['measure-view-measure'],
+                ],
+                [
+                    'actions' => ['delete'],
+                    'allow' => true,
+                    'roles' => ['measure-delete-measure'],
+                ],
+                [
+                    'allow' => false,
+                    'roles' => ['*'],
                 ],
             ],
         ],
