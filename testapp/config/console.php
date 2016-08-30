@@ -8,6 +8,10 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['MeasureAdministrator'],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

@@ -11,6 +11,10 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'DevGroup\Measure\Bootstrap'],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['MeasureAdministrator'],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'b7RRqq6h6yzm7SRaguDfqgOzP_i68G8E',

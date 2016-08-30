@@ -9,7 +9,7 @@ use yii\web\NotFoundHttpException;
 /**
  * ManageController implements the CRUD actions for Measure model.
  */
-class ManageController extends Controller
+class MeasuresManageController extends Controller
 {
     /**
      * @inheritdoc
